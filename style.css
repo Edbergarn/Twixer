@@ -1,0 +1,97 @@
+main {
+	width: 100%;
+	height: 97vh;
+	margin: 0 auto;
+	background-color: lightblue;
+}
+h1{
+	font-size: 10vw;
+	text-align: center;
+	border-bottom: 2px solid darkgrey;
+	margin-top: 0%;
+}
+ul{
+	list-style: none;
+}
+#score{
+	width: 30%;
+	margin-left: 35%;
+	float: left;
+}
+#game{
+	width: 30%;
+	margin-left: 35%;
+	float: left;
+}
+#upgrades{
+	float: left;
+	list-style: none;
+}
+#clickerbutton {
+	font-size: 4em;
+	width:15vw;
+	height:10vw;
+	border-radius: 100px;
+	background-image: url('MinTwixps.png');
+	
+	background-position: center center;
+	background-size: 180%;
+	background-color: gold;
+	background-repeat: no-repeat;
+}
+#clickerbutton:after{
+	content: "";
+	display: block;
+	padding-bottom: 100%;
+}
+
+#clickerbutton:active {
+	background-color: white;
+	background-size: 175%;
+	background-position: center center;
+}
+#lejon, #zebra, #krokodil, #lejonBuy {
+	width: 80px;
+	height: 40px;
+	border-radius: 10px;
+}
+#lejon, #zebra, #clickerbutton, #score, #game, #powerUps{
+	text-align: center;
+}
+#lejonBuy{
+	display: none;
+}
+.power{
+	background-color: grey;
+	width: 30%;
+}
+#clickerbutton: focus, #lejon:focus {
+	outline: 0px;
+}
+#powerUps{
+	padding: 0px;
+
+}
+.column1 {
+    float: left;
+    width: 30%;
+    height: 300px; 
+}
+.column2{
+    float: left;
+    width: 38%;
+    margin-left: 0%;
+	border-left: 0.1vw solid black;
+	border-right: 0.1vw solid black;
+}
+.column3{
+    float: left;
+    width: 30%;
+    height: 300px; 
+    background-color: grey;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}

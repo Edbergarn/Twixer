@@ -1,6 +1,12 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+html{
+	background-color: gold;
+}
 main {
 	width: 100%;
-	height: 97vh;
 	margin: 0 auto;
 	background-color: lightblue;
 }
@@ -20,12 +26,13 @@ ul{
 }
 #game{
 	width: 30%;
-	margin-left: 35%;
+	margin-left: 32%;
 	float: left;
 }
 #upgrades{
 	float: left;
 	list-style: none;
+	padding-left: -40px;
 }
 #clickerbutton {
 	font-size: 4em;
@@ -41,7 +48,6 @@ ul{
 }
 #clickerbutton:after{
 	content: "";
-	display: block;
 	padding-bottom: 100%;
 }
 
@@ -50,12 +56,13 @@ ul{
 	background-size: 175%;
 	background-position: center center;
 }
-#lejon, #zebra, #krokodil, #lejonBuy {
-	width: 80px;
+#lejon, #zebra, #krokodil, #lejonBuy, #bonus1 {
+	width: 70%;
 	height: 40px;
 	border-radius: 10px;
+
 }
-#lejon, #zebra, #clickerbutton, #score, #game, #powerUps{
+#lejon, #zebra, #clickerbutton, #score, #game, #powerUps, #Uppgradering, #bonus1{
 	text-align: center;
 }
 #lejonBuy{
@@ -63,31 +70,35 @@ ul{
 }
 .power{
 	background-color: grey;
-	width: 30%;
+	width: 3
 }
 #clickerbutton: focus, #lejon:focus {
 	outline: 0px;
 }
 #powerUps{
 	padding: 0px;
+	width: 100%;
 
 }
 .column1 {
     float: left;
     width: 30%;
-    height: 300px; 
+    height: 50vh; 
+    background-color: grey;
 }
 .column2{
     float: left;
-    width: 38%;
+    width: 39.79%;
+    height: 100vh;
     margin-left: 0%;
 	border-left: 0.1vw solid black;
 	border-right: 0.1vw solid black;
+	background-color: lightblue;
 }
 .column3{
     float: left;
     width: 30%;
-    height: 300px; 
+    height: 50vh; 
     background-color: grey;
 }
 .row:after {
@@ -95,3 +106,21 @@ ul{
     display: table;
     clear: both;
 }
+h2{
+	text-align: center;
+	font-size: 4em;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+/*.lejon{
+	width: 70%;
+	float: left;
+}
+.zebra{
+	width: 70%;
+	float: left;
+}
+.krokodil{
+	width: 70%;
+	float: left;
+}*/

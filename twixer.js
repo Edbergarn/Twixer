@@ -2,7 +2,8 @@
 		var button = document.getElementById("clickerbutton");
 		var lejonKnapp = document.getElementById("lejon");
 		var zebraKnapp = document.getElementById("zebra");
-		var krokodilKnapp = document.getElementById("krokodil")
+		var krokodilKnapp = document.getElementById("krokodil");
+		var bonus1Knapp = document.getElementById("bonus1");
 		var scoreDiv = document.getElementById("score");
 		var powerText = document.getElementById("powerText");
 		var lejonBuy = document.getElementById("lejonBuy");
@@ -27,6 +28,8 @@
 		var krokodilClick = 1;
 		var krokodil = null;
 		var krokodilTimer = 0;
+		var bonus1Cost = 2000;
+		var bonus1Bought = 0;
 
 		var superLejon = 0;
 
@@ -35,9 +38,14 @@
 		scoreText.textContent = "Score: 0";
 		lejonKnapp.textContent = "Penna: " + Math.floor(lejonCost);
 		zebraKnapp.textContent = "Knogjärn: " + Math.floor(zebraCost);
-		krokodilKnapp.textContent = "1 slav: " + Math.floor(krokodilCost);
+		krokodilKnapp.textContent = "Slav: " + Math.floor(krokodilCost);
 		/* click event + logic*/
 		button.addEventListener("click", function(){
+			if (bonus1Bought == 1) {
+				clickValue *= 2;
+			} else {
+				bonus1Bought == 0;
+			}
 
 
 			if (lejonClick > 0) {
@@ -111,7 +119,7 @@
 
 		krokodilKnapp.addEventListener("click", function(){
 			if (bank >= krokodilCost) {
-				console.log("Köpte 1 SLAV!!!");
+				console.log("Köpte SLAV!!!");
 				bank -= krokodilCost;
 				allValue++;
 				krokodilCost *= 1.2;
@@ -126,7 +134,7 @@
 					}
 			}, 1000)
 		
-		krokodilKnapp.textContent = "1 Slav: " + Math.floor(krokodilCost);
+		krokodilKnapp.textContent = "Slav: " + Math.floor(krokodilCost);
 		scoreText.textContent = "Score: " + Math.floor(bank);
 			} else{
 				console.log("Du har inte råd!:(")
@@ -140,3 +148,15 @@
 				lejonBuy.style.display = "none";
 			}
 		})
+	/*	bonus1Knapp.addEventListener("click", function(){
+			 if(bonus1Bought == 1){
+			 	bonus1Bought == 0;
+			 }esle if(bank >= bonus1Cost){
+				bonus1Bought == 1;
+				scoreText.textContent = "Score: " + Math.floor(bank);
+				bonus1Knapp.textContent = "Slav: " + Math.floor(bonus1Cost);
+			 }else{
+				console.log("Du har inte råd!");
+			}
+		
+	})*/

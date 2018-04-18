@@ -3,10 +3,9 @@
 		var lejonKnapp = document.getElementById("lejon");
 		var zebraKnapp = document.getElementById("zebra");
 		var krokodilKnapp = document.getElementById("krokodil");
-		var bonus1Knapp = document.getElementById("bonus1");
+		var bonusKnapp = document.getElementById("bonus");
 		var scoreDiv = document.getElementById("score");
 		var powerText = document.getElementById("powerText");
-		var lejonBuy = document.getElementById("lejonBuy");
 
 		/*Skapa nytt element för poängen*/
 		var scoreText = document.createElement("p");
@@ -18,7 +17,6 @@
 		var bank = 0;
 		var lejonCost = 15;
 		var lejonClick = 0;
-		var lejonBought = 0;
 		var zebraCost = 30;
 		var zebraClick = 0;
 		var zebra = null;
@@ -28,10 +26,9 @@
 		var krokodilClick = 1;
 		var krokodil = null;
 		var krokodilTimer = 0;
-		var bonus1Cost = 2000;
-		var bonus1Bought = 0;
+		var bonusCost = 2000;
+		var bonusBought = 0;
 
-		var superLejon = 0;
 
 
 		/*start*/
@@ -39,14 +36,14 @@
 		lejonKnapp.textContent = "Penna: " + Math.floor(lejonCost);
 		zebraKnapp.textContent = "Knogjärn: " + Math.floor(zebraCost);
 		krokodilKnapp.textContent = "Slav: " + Math.floor(krokodilCost);
+		bonusKnapp.textContent = "Bonus: " + Math.floor(bonusCost);
 		/* click event + logic*/
-		button.addEventListener("click", function(){
-			if (bonus1Bought == 1) {
-				clickValue *= 2;
+		button.addEventListener("click", function() {
+			if (bonusBought == 1) {
+				clickValue == 2;
 			} else {
-				bonus1Bought == 0;
+				clickValue *= 1;
 			}
-
 
 			if (lejonClick > 0) {
 				console.log("Jag har " + lejonClick + " lejon kvar!");
@@ -65,22 +62,16 @@
 		lejonKnapp.addEventListener("click", function(){
 			if(bank >= lejonCost){
 
-				if (lejonBought >= 10) {
-
-						lejonBuy.style.display = "inline";
-				}
 				console.log("köpte Penna");
 				if (lejonClick>0) {
 					lejonClick += 10;
 					bank -= lejonCost;
 					lejonCost *= 1.5;
-					lejonBought++;
 				}else{
 				bank -= lejonCost;
 				clickValue *= 2;
 				lejonCost *= 1.5;
 				lejonClick +=10;}
-				lejonBought++;
 				lejonKnapp.textContent = "Penna: " + Math.floor(lejonCost);
 				scoreText.textContent = "Score: " + Math.floor(bank);
 			} else{
@@ -88,7 +79,7 @@
 			}
 
 		}, true);
-		scoreDiv.appendChild(scoreText);
+
 
 		zebraKnapp.addEventListener("click", function(){
 			if(bank >= zebraCost && zebraTimer <= 0){
@@ -114,10 +105,9 @@
 			}else {
 				console.log("Du kan max ha 1 Knogjärn åt gången :(");
 			}
-		})
-		scoreDiv.appendChild(scoreText);
+		}, true);
 
-		krokodilKnapp.addEventListener("click", function(){
+		krokodilKnapp.addEventListener("click", function() {
 			if (bank >= krokodilCost) {
 				console.log("Köpte SLAV!!!");
 				bank -= krokodilCost;
@@ -129,8 +119,8 @@
 			krokodil = setInterval(function(){
 			bank += allValue;
 			scoreText.textContent = "Score: " + Math.floor(bank);	
-		if (krokodilTimer == 0) {
-			clearInterval(krokodil);
+			if (krokodilTimer == 0) {
+				clearInterval(krokodil);
 					}
 			}, 1000)
 		
@@ -140,23 +130,18 @@
 				console.log("Du har inte råd!:(")
 			}
 
-		})
-		lejonBuy.addEventListener("click", function(){
-			if (bank >= 200) {
-				clickValue * 2;
-				superLejon++;
-				lejonBuy.style.display = "none";
-			}
-		})
-	/*	bonus1Knapp.addEventListener("click", function(){
-			 if(bonus1Bought == 1){
-			 	bonus1Bought == 0;
-			 }esle if(bank >= bonus1Cost){
-				bonus1Bought == 1;
+		});
+		bonusKnapp.addEventListener("click", function() {
+			 if(bonusBought == 1){
+			 	bonusBought == 0;
+			 }else if(bank >= bonusCost){
+				bonusBought += 1;
+				bank -= bonusCost;
+				clickValue += 2;
 				scoreText.textContent = "Score: " + Math.floor(bank);
-				bonus1Knapp.textContent = "Slav: " + Math.floor(bonus1Cost);
+				bonusKnapp.textContent = "Bonus: " + Math.floor(bonusCost);
 			 }else{
 				console.log("Du har inte råd!");
 			}
 		
-	})*/
+	}, true);

@@ -23,6 +23,7 @@ ul{
 	width: 30%;
 	margin-left: 35%;
 	float: left;
+	font-size: 2em;
 }
 #game{
 	width: 30%;
@@ -56,13 +57,13 @@ ul{
 	background-size: 175%;
 	background-position: center center;
 }
-#lejon, #zebra, #krokodil, #lejonBuy, #bonus1 {
+#lejon, #zebra, #krokodil, #lejonBuy, #bonus {
 	width: 70%;
 	height: 40px;
 	border-radius: 10px;
 
 }
-#lejon, #zebra, #clickerbutton, #score, #game, #powerUps, #Uppgradering, #bonus1{
+#lejon, #zebra, #clickerbutton, #score, #game, #powerUps, #Uppgradering, #bonus{
 	text-align: center;
 }
 #lejonBuy{
@@ -72,7 +73,7 @@ ul{
 	background-color: grey;
 	width: 3
 }
-#clickerbutton: focus, #lejon:focus {
+#clickerbutton:focus, #lejon:focus, #zebra:focus, #krokodil:focus, #bonus:focus {
 	outline: 0px;
 }
 #powerUps{

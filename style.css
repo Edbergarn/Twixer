@@ -33,7 +33,6 @@ ul{
 #upgrades{
 	float: left;
 	list-style: none;
-	padding-left: -40px;
 }
 #clickerbutton {
 	font-size: 4em;
@@ -71,7 +70,7 @@ ul{
 }
 .power{
 	background-color: grey;
-	width: 3
+	width: 30%;
 }
 #clickerbutton:focus, #lejon:focus, #zebra:focus, #krokodil:focus, #bonus:focus {
 	outline: 0px;

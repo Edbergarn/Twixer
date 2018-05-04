@@ -11,7 +11,7 @@ main {
 	background-color: lightblue;
 }
 h1{
-	font-size: 10vw;
+	font-size: 20.25vh;
 	text-align: center;
 	border-bottom: 2px solid darkgrey;
 	margin-top: 0%;
@@ -73,7 +73,7 @@ ul{
 	width: 30%;
 }
 #clickerbutton:focus, #lejon:focus, #zebra:focus, #krokodil:focus, #bonus:focus {
-	outline: 0px;
+		outline: 0px;
 }
 #powerUps{
 	padding: 0px;
@@ -83,8 +83,10 @@ ul{
 .column1 {
     float: left;
     width: 30%;
-    height: 50vh; 
+    height: 76.7vh; 
     background-color: grey;
+    margin-top: 23.3vh;
+    border-top: 2px solid darkgrey;
 }
 .column2{
     float: left;
@@ -98,8 +100,10 @@ ul{
 .column3{
     float: left;
     width: 30%;
-    height: 50vh; 
+    height: 76.7vh; 
     background-color: grey;
+    margin-top: 23.3vh;
+	border-top: 2px solid darkgrey;
 }
 .row:after {
     content: "";
